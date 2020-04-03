@@ -14,7 +14,7 @@ class CreateTestsTable extends Migration
     public function up()
     {
         Schema::create('tests', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('last_name_m',30)->nullable();
             $table->string('title',100);
             $table->string('description',300);
@@ -23,9 +23,9 @@ class CreateTestsTable extends Migration
             $table->dateTime('date_end')->nullable();;
 
             $table->unsignedInteger('users_id');
-            $table->foreign('users_id', 'fk_susers_tests')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
+        // $table->foreign('users_id', 'fk_users_tests')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
            
-           
+         
             $table->timestamps();
         });
     }

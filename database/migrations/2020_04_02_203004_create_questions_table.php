@@ -14,15 +14,21 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('pregunta',300);
+            $table->increments('id');
+            $table->string('question',300);
             $table->unsignedInteger('order');
 
-            $table->unsignedInteger('type_cuestions_id');
-            $table->foreign('type_cuestions_id', 'fk_questions_type_questions')->references('id')->on('type_questions')->onDelete('restrict')->onUpdate('restrict');
+            
+              
+            $table->integer('type_questions_id')->unsigned();
+            $table->foreign('type_questions_id')->references('id')->on('type_questions');
+
+
+          //  $table->unsignedInteger('type_questions_id');
+           // $table->foreign('type_questions_id', 'fk_questions_type_questions')->references('id')->on('type_questions')->onDelete('restrict')->onUpdate('restrict');
            
             $table->unsignedInteger('tests_id');
-            $table->foreign('tests_id', 'fk_questions_tests')->references('id')->on('tests')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('tests_id','fk_questions_tests')->references('id')->on('tests')->onDelete('restrict')->onUpdate('restrict');
            
            
             $table->timestamps();

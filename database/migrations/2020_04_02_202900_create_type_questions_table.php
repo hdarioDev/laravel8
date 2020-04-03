@@ -14,7 +14,7 @@ class CreateTypeQuestionsTable extends Migration
     public function up()
     {
         Schema::create('type_questions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('tipo',45);
             $table->string('descripcion',300);
             $table->timestamps();
