@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -23,6 +23,6 @@ Route::get('admin', function(){
     return view('admin_template');
 });
 
-Route::get('students', function(){
-    return view('students.abm');
-});
+
+Route::resource('students','StudentsController');
+Route::resource('tests','TestsController');

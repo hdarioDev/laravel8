@@ -15,7 +15,7 @@
           <div class="col-sm-9">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Estudiantes</li>
+              <li class="breadcrumb-item active">Evaluaciones</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -69,7 +69,7 @@
 
 
         
-    @if(sizeof($students) > 0)
+    @if(sizeof($tests) > 0)
         <table class="table table-bordered">
             <tr class="thead-dark">
         
@@ -82,14 +82,14 @@
                 <th>Date birth</th>
                 <th width="280px">More</th>
             </tr>
-            @foreach ($students as $student)
+            @foreach ($tests as $value)
                 <tr>
                     <td>{{ ++$i }}</td>
-                    <td>{{ $student->id }}</td>
-                    <td>{{ $student->name }}</td>
-                    <td>{{ $student->last_name_p }}</td>
-                    <td>{{ $student->ci }}</td>
-                    <td>{{ $student->date_birth }}</td>
+                    <td>{{ $value->id }}</td>
+                    <td>{{ $value->name }}</td>
+                    <td>{{ $value->last_name_p }}</td>
+                    <td>{{ $value->ci }}</td>
+                    <td>{{ $value->date_birth }}</td>
                     <td>
                        
                     <form action="{{ route('students.destroy', $student->id) }}" method="POST">

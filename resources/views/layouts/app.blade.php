@@ -21,10 +21,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"  style="background-color:  #343a40  !important;">
+            <div class="container" >
+                <a style="color:white  !important; font-size: 20px" class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Students') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

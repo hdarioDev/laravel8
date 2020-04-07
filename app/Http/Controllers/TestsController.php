@@ -14,7 +14,9 @@ class TestsController extends Controller
      */
     public function index()
     {
-        //
+        $tests = tests::latest()->paginate(5);
+        return view('tests.abm',compact('tests'))->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
 
     /**

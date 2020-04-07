@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\students;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+    //      return view('home');
+    $students = students::latest()->paginate(5);
+    return view('students.abm',compact('students'))->with('i', (request()->input('page', 1) - 1) * 5);
+
+
     }
 }
