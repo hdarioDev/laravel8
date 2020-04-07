@@ -64,7 +64,6 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Tests
-          
               </p>
             </a>
           </li>
